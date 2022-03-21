@@ -52,12 +52,12 @@ class Alita(Client):
         await super().start()
 
         meh = await self.get_me()  # Get bot info from pyrogram client
-        LOGGER.info("Starting bot...")
+        LOGGER.info("MissAlexiebot is Starting...")
         Config.BOT_ID = meh.id
         Config.BOT_NAME = meh.first_name
         Config.BOT_USERNAME = meh.username
 
-        startmsg = await self.send_message(MESSAGE_DUMP, "<i>Starting Bot...</i>")
+        startmsg = await self.send_message(MESSAGE_DUMP, "<i>MissAlexiebot is Starting...</i>")
 
         # Load Languages
         lang_status = len(lang_dict) >= 1
@@ -85,7 +85,7 @@ class Alita(Client):
             ),
         )
 
-        LOGGER.info("Bot Started Successfully!\n")
+        LOGGER.info("MissAlexiebot is Started Successfully!\n")
 
     async def stop(self):
         """Stop the bot and send a message to MESSAGE_DUMP telling that the bot has stopped."""
@@ -96,7 +96,7 @@ class Alita(Client):
             MESSAGE_DUMP,
             document=LOGFILE,
             caption=(
-                "Bot Stopped!\n\n" f"Uptime: {runtime}\n" f"<code>{LOG_DATETIME}</code>"
+                "MissAlexiebot is Stopped!\n\n" f"Uptime: {runtime}\n" f"<code>{LOG_DATETIME}</code>"
             ),
         )
         if MESSAGE_DUMP:
